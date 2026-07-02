@@ -1,0 +1,39 @@
+name: Bug report
+description: Report a problem
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The release tag, or the package version (`pip show …` / `npm ls …`).
+      placeholder: "2026.7.0"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps plus the smallest input/config that triggers it. Redact any keys.
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: OS, runtime version (Python / Node), and install extras.
+      placeholder: "macOS 15, Python 3.11"
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before submitting
+      options:
+        - label: I'm on the latest release and have reproduced the problem there.
